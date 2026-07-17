@@ -58,10 +58,10 @@ const styles = StyleSheet.create({
   onboardTitle: {
     textAlign: "center",
     color: "white",
-    fontSize: 60,
+    fontSize: 40,
     width: "80%",
     fontWeight: "700",
-    marginTop: 400,
+    marginTop: 300,
   },
   onboardDescription: {
     fontSize: 18,
