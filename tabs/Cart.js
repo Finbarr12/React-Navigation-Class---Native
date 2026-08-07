@@ -16,6 +16,7 @@ const Cart = () => {
       }
 
       let location = await Location.getCurrentPositionAsync({});
+      console.log(location);
       setLocation(location);
 
       try {
