@@ -7,6 +7,7 @@ import Chat from "../tabs/Chat";
 import Cart from "../tabs/Cart";
 import Profile from "../tabs/Profile";
 import { Ionicons } from "@expo/vector-icons";
+import Settings from "../tabs/Settings";
 
 const Tab = createBottomTabNavigator();
 
@@ -49,6 +50,9 @@ const Welcome = ({ route }) => {
           if (route.name === "Profile") {
             iconName = focused ? "person" : "person-outline";
           }
+          if (route.name === "Settings") {
+            iconName = focused ? "settings" : "settings-outline";
+          }
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
@@ -62,6 +66,7 @@ const Welcome = ({ route }) => {
       <Tab.Screen name="Chat" component={Chat} />
       <Tab.Screen name="Cart" component={Cart} />
       <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="Settings" component={Settings} />
     </Tab.Navigator>
   );
 };
