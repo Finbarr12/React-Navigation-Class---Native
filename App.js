@@ -8,10 +8,18 @@ import Welcome from "./screens/Welcome";
 import Survey1 from "./screens/Survey1";
 import Survey2 from "./screens/Survey2";
 import Survey3 from "./screens/Survey3";
+import Toast from "react-native-toast-message";
+import CustomToast from "./components/CustomToast";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const toastConfig = {
+    success: (props) => <CustomToast {...props} type="success" />,
+    error: (props) => <CustomToast {...props} type="error" />,
+    info: (props) => <CustomToast {...props} type="info" />,
+    warning: (props) => <CustomToast {...props} type="warning" />,
+  };
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -27,6 +35,7 @@ export default function App() {
         <Stack.Screen name="Survey2" component={Survey2} />
         <Stack.Screen name="Survey3" component={Survey3} />
       </Stack.Navigator>
+      <Toast config={toastConfig} />
     </NavigationContainer>
   );
 }
